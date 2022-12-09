@@ -18,6 +18,10 @@ export default function Calculadora() {
 
     function calculaIMC() {
         setIMC("");
+        if (peso <= 0 || altura <= 0) {
+            alert("Digite apenas números positivos!");
+            return;
+        }
         const alturaNumber = Number(altura.replace(",", "")) / 100;
         const pesoNumber = Number(peso);
         const aoQuadrado = alturaNumber * alturaNumber;
