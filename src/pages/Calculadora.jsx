@@ -40,7 +40,7 @@ export default function Calculadora() {
                             <label htmlFor='altura'>Altura</label>
                             <input
                                 onChange={(e) => setAltura(e.target.value)}
-                                type='text'
+                                type='number'
                                 name='altura'
                                 id='altura'
                                 placeholder='Digite sua altura...'
@@ -51,7 +51,7 @@ export default function Calculadora() {
                             <label htmlFor='peso'>Peso</label>
                             <input
                                 onChange={(e) => setPeso(e.target.value)}
-                                type='text'
+                                type='number'
                                 name='peso'
                                 id='peso'
                                 placeholder='Digite seu Peso...'
