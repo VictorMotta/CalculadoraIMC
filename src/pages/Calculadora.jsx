@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Grau from "../components/Grau";
 
@@ -6,6 +6,15 @@ export default function Calculadora() {
     const [altura, setAltura] = useState("");
     const [peso, setPeso] = useState("");
     const [imc, setIMC] = useState("");
+    const [toggleDisable, setToggleDisable] = useState(false);
+
+    useEffect(() => {
+        if (!altura || !peso) {
+            setToggleDisable(true);
+            return;
+        }
+        setToggleDisable(false);
+    }, [altura, peso]);
 
     function calculaIMC() {
         setIMC("");
@@ -56,7 +65,9 @@ export default function Calculadora() {
                         >
                             Limpar
                         </button>
-                        <button onClick={calculaIMC}>Calcular</button>
+                        <button onClick={calculaIMC} disabled={toggleDisable && "disabled"}>
+                            Calcular
+                        </button>
                     </StyledButtons>
                     {imc && <span>Seu IMC: {imc}</span>}
                 </StyledInfoPrincipal>

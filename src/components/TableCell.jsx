@@ -10,7 +10,7 @@ export default function TableCell({ item, imcDeclared }) {
 
     useEffect(() => {
         setColor("#fff");
-        if (imcDeclared < imcMax && imcDeclared > imcMin) {
+        if (imcDeclared <= imcMax && imcDeclared >= imcMin) {
             setColor("#cdeae3");
         }
     }, [imcDeclared]);
