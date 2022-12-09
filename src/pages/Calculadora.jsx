@@ -51,6 +51,7 @@ export default function Calculadora() {
                             onClick={() => {
                                 setAltura("");
                                 setPeso("");
+                                setIMC("");
                             }}
                         >
                             Limpar
