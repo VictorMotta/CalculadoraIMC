@@ -9,7 +9,7 @@ export default function Calculadora() {
 
     function calculaIMC() {
         setIMC("");
-        const alturaNumber = Number(altura) / 100;
+        const alturaNumber = Number(altura.replace(",", "")) / 100;
         const pesoNumber = Number(peso);
         const aoQuadrado = alturaNumber * alturaNumber;
         setIMC((pesoNumber / aoQuadrado).toFixed(2));
